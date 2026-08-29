@@ -4,7 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ResumeAi</title>
+    <title>ResumeAi - Free AI Resume Builder</title>
+
+    <meta name="description"
+          content="ResumeAi is a free AI Resume Builder. Create professional resumes with AI summaries, beautiful templates, live preview and PDF download.">
+
+    <meta name="keywords"
+          content="AI Resume Builder, Free Resume Builder, Resume Maker, CV Builder, ResumeAi">
+
+    <meta name="author" content="ResumeAi">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical"
+          href="https://resumeaistudio.github.io/ai-resume-builder/">
+
+    <meta property="og:title"
+          content="ResumeAi - Free AI Resume Builder">
+
+    <meta property="og:description"
+          content="Create professional resumes with ResumeAi.">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:url"
+          content="https://resumeaistudio.github.io/ai-resume-builder/">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -15,51 +39,105 @@
 
     <h1>ResumeAi</h1>
 
-    <input type="text" id="name" placeholder="Full Name">
+    <p class="intro">
+        Create a professional resume quickly with ResumeAi.
+    </p>
 
-    <input type="email" id="email" placeholder="Email">
+    <div class="date-info">
+        📅 Today: <span id="liveDate"></span>
+    </div>
 
-    <input type="text" id="phone" placeholder="Phone Number">
+    <input
+        type="text"
+        id="name"
+        placeholder="Full Name">
 
-    <input type="text" id="jobTitle" placeholder="Job Title">
+    <input
+        type="email"
+        id="email"
+        placeholder="Email">
 
-    <input type="file" id="photo" accept="image/*">
+    <input
+        type="text"
+        id="phone"
+        placeholder="Phone Number">
 
-    <label><b>Select Resume Template</b></label>
+    <input
+        type="text"
+        id="jobTitle"
+        placeholder="Job Title">
+
+    <input
+        type="file"
+        id="photo"
+        accept="image/*">
+
+    <label>
+        <b>Select Resume Template</b>
+    </label>
 
     <select id="template">
-        <option value="classic">Classic</option>
-        <option value="modern">Modern</option>
-        <option value="professional">Professional</option>
-        <option value="creative">Creative</option>
-        <option value="minimal">Minimal</option>
+
+        <option value="classic">
+            Classic
+        </option>
+
+        <option value="modern">
+            Modern
+        </option>
+
+        <option value="professional">
+            Professional
+        </option>
+
+        <option value="creative">
+            Creative
+        </option>
+
+        <option value="minimal">
+            Minimal
+        </option>
+
     </select>
 
-    <input type="text" id="education" placeholder="Education">
+    <input
+        type="text"
+        id="education"
+        placeholder="Education">
 
-    <textarea id="skills"
+    <textarea
+        id="skills"
         placeholder="Skills (Example: HTML, CSS, JavaScript)"></textarea>
 
-    <textarea id="experience"
+    <textarea
+        id="experience"
         placeholder="Experience (Example: Fresher)"></textarea>
 
     <button onclick="generateAI()">
         🤖 Generate AI Summary
     </button>
 
-    <textarea id="summary"
+    <textarea
+        id="summary"
         placeholder="AI Professional Summary"></textarea>
 
-    <textarea id="projects"
+    <textarea
+        id="projects"
         placeholder="Projects (Example: AI Resume Builder, Weather App)"></textarea>
 
-    <input type="text" id="languages"
+    <input
+        type="text"
+        id="languages"
         placeholder="Languages (Example: Hindi, English)">
 
-    <input type="url" id="github"
+    <input
+        type="url"
+        id="github"
         placeholder="GitHub Profile Link">
 
-    <input type="url" id="linkedin"
+    <input
+        type="url"
+        id="linkedin"
         placeholder="LinkedIn Profile Link">
 
     <button onclick="generateResume()">
@@ -91,8 +169,6 @@
         <div class="pricing-container">
 
 
-            <!-- WEEKLY -->
-
             <div class="price-card">
 
                 <h3>⚡ Weekly</h3>
@@ -101,14 +177,13 @@
 
                 <p>per week</p>
 
-                <button onclick="selectPlan('Weekly', 29)">
+                <button
+                    onclick="selectPlan('Weekly', 29)">
                     Choose Weekly
                 </button>
 
             </div>
 
-
-            <!-- MONTHLY -->
 
             <div class="price-card best-plan">
 
@@ -120,14 +195,13 @@
 
                 <p>per month</p>
 
-                <button onclick="selectPlan('Monthly', 79)">
+                <button
+                    onclick="selectPlan('Monthly', 79)">
                     Choose Monthly
                 </button>
 
             </div>
 
-
-            <!-- YEARLY -->
 
             <div class="price-card">
 
@@ -137,7 +211,8 @@
 
                 <p>per year</p>
 
-                <button onclick="selectPlan('Yearly', 499)">
+                <button
+                    onclick="selectPlan('Yearly', 499)">
                     Choose Yearly
                 </button>
 
@@ -162,6 +237,10 @@
 
 
     <!-- LIVE PREVIEW -->
+
+    <div class="preview-title">
+        <h2>Live Resume Preview</h2>
+    </div>
 
     <div id="resume"></div>
 
