@@ -1,161 +1,84 @@
-<!DOCTYPE html>  <html lang="en">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>ResumeAi</title>  
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Resume Builder</title>
+<link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="style.css">
+</head>
 
-</head>  <body>  <div class="container">  <h1>ResumeAi</h1>  
+<body>
 
-<input type="text" id="name" placeholder="Full Name">  
+<div class="container">
 
-<input type="email" id="email" placeholder="Email">  
+<h1>AI Resume Builder</h1>
 
-<input type="text" id="phone" placeholder="Phone Number">  
+<input type="text" id="name" placeholder="Full Name"><br><br>
 
-<input type="text" id="jobTitle" placeholder="Job Title">  
+<input type="email" id="email" placeholder="Email"><br><br>
 
-<input type="file" id="photo" accept="image/*">  
+<input type="text" id="phone" placeholder="Phone Number"><br><br>
 
-<label><b>Select Resume Template</b></label>  
+<input type="file" id="photo" accept="image/*"><br><br>
 
-<select id="template">  
-    <option value="classic">Classic</option>  
-    <option value="modern">Modern</option>  
-    <option value="professional">Professional</option>  
-    <option value="creative">Creative</option>  
-    <option value="minimal">Minimal</option>  
-</select>  
+<label><b>Select Resume Template</b></label><br><br>
 
-<input type="text" id="education" placeholder="Education">  
+<select id="template">
+    <option value="classic">Classic</option>
+    <option value="modern">Modern</option>
+    <option value="professional">Professional</option>
+</select>
 
-<textarea id="skills"  
-    placeholder="Skills (Example: HTML, CSS, JavaScript)"></textarea>  
+<br><br>
 
-<textarea id="experience"  
-    placeholder="Experience (Example: Fresher)"></textarea>  
+<input type="text" id="education" placeholder="Education"><br><br>
 
-<button onclick="generateAI()">  
-    🤖 Generate AI Summary  
-</button>  
+<textarea id="skills" placeholder="Skills"></textarea><br><br>
 
-<textarea id="summary"  
-    placeholder="AI Professional Summary"></textarea>  
+<textarea id="experience" placeholder="Experience"></textarea><br><br>
 
-<textarea id="projects"  
-    placeholder="Projects (Example: AI Resume Builder, Weather App)"></textarea>  
+<button onclick="generateAI()">🤖 Generate AI Summary</button>
+<br><br>
 
-<input type="text" id="languages"  
-    placeholder="Languages (Example: Hindi, English)">  
+<textarea id="summary" placeholder="AI Professional Summary"></textarea>
+<br><br>
 
-<input type="url" id="github"  
-    placeholder="GitHub Profile Link">  
+<textarea id="projects"
+placeholder="projects(Example: AI Resume Builder,Weather App)"></textarea><br><br>
 
-<input type="url" id="linkedin"  
-    placeholder="LinkedIn Profile Link">  
+<input type="text" id="languages" placeholder="Languages (Example: Hindi, English)"><br><br>
 
-<button onclick="generateResume()">  
-    Generate Resume  
-</button>  
+<input type="url" id="github"placeholder="github Profile Link"><br><br>
 
+<input type="url" id="linkedin"placeholder="linkedin Profile Link"><br><br>
 
-<!-- PREMIUM -->  
+<button onclick="generateResume()">Generate Resume</button>
 
-<div class="premium-box">  
+<button onclick="darkMode()">🌙Dark Mode</button>
 
-    <h2>💎 ResumeAi Premium</h2>  
+<button onclick="clearForm()">clearForm</button>
 
-    <p>  
-        Unlock premium templates and features.  
-    </p>  
-
-    <div class="premium-features">  
-
-        <p>🔒 Modern Template</p>  
-        <p>🔒 Professional Template</p>  
-        <p>🔒 Creative Template</p>  
-        <p>🔒 Minimal Template</p>  
-        <p>🔒 Premium Resume Designs</p>  
-
-    </div>  
-
-
-    <div class="pricing-container">  
-
-
-        <!-- WEEKLY -->  
-
-        <div class="price-card">  
-
-            <h3>⚡ Weekly</h3>  
-
-            <h2>₹29</h2>  
-
-            <p>per week</p>  
-
-            <button onclick="selectPlan('Weekly', 29)">  
-                Choose Weekly  
-            </button>  
-
-        </div>  
-
-
-        <!-- MONTHLY -->  
-
-        <div class="price-card best-plan">  
-
-            <span>BEST VALUE</span>  
-
-            <h3>💎 Monthly</h3>  
-
-            <h2>₹79</h2>  
-
-            <p>per month</p>  
-
-            <button onclick="selectPlan('Monthly', 79)">  
-                Choose Monthly  
-            </button>  
-
-        </div>  
-
-
-        <!-- YEARLY -->  
-
-        <div class="price-card">  
-
-            <h3>👑 Yearly</h3>  
-
-            <h2>₹499</h2>  
-
-            <p>per year</p>  
-
-            <button onclick="selectPlan('Yearly', 499)">  
-                Choose Yearly  
-            </button>  
-
-        </div>  
-
-    </div>  
-
-</div>  
-
-
-<button onclick="darkMode()">  
-    🌙 Dark Mode  
-</button>  
-
-<button onclick="clearForm()">  
-    Clear Form  
-</button>  
-
-<button onclick="downloadPDF()">  
-    Download Resume (PDF)  
-</button>  
-
-
-<!-- LIVE PREVIEW -->  
+<button onclick="downloadPDF()">Download Resume (pdf)</button>
 
 <div id="resume"></div>
 
-</div>  <script src="script.js"></script>  </body>  
+    <div id="resume"></div>
+
+<div id="livePreview">
+    <h2>👀 Live Preview</h2>
+    <p>Fill the form to see your resume preview here.</p>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("sw.js");
+    });
+}
+</script>
+</body>
 </html>
