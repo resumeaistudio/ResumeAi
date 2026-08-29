@@ -27,9 +27,25 @@ body {
 
 .container > h1 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 8px;
     font-size: 36px;
     color: #1677ff;
+}
+
+.intro {
+    text-align: center;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.date-info {
+    text-align: center;
+    background: #eef5ff;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    color: #1677ff;
+    font-weight: 600;
 }
 
 input,
@@ -92,9 +108,7 @@ button:active {
 }
 
 
-/* ================================
-   PREMIUM
-================================ */
+/* PREMIUM */
 
 .premium-box {
     margin-top: 30px;
@@ -127,9 +141,6 @@ button:active {
     margin-bottom: 5px;
     border-bottom: 1px solid #dfd2eb;
 }
-
-
-/* PRICING */
 
 .pricing-container {
     display: flex;
@@ -180,12 +191,20 @@ button:active {
 }
 
 
-/* ================================
-   RESUME
-================================ */
+/* PREVIEW */
+
+.preview-title {
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+.preview-title h2 {
+    text-align: center;
+    color: #1677ff;
+}
 
 #resume {
-    margin-top: 35px;
+    margin-top: 15px;
 }
 
 .resume-card {
@@ -270,9 +289,7 @@ button:active {
 }
 
 
-/* ================================
-   CLASSIC
-================================ */
+/* CLASSIC */
 
 .classic-template {
     background: white;
@@ -285,9 +302,7 @@ button:active {
 }
 
 
-/* ================================
-   MODERN
-================================ */
+/* MODERN */
 
 .modern-template {
     background: #eef7ff;
@@ -313,9 +328,7 @@ button:active {
 }
 
 
-/* ================================
-   PROFESSIONAL
-================================ */
+/* PROFESSIONAL */
 
 .professional-template {
     background: #f5f5f5;
@@ -343,9 +356,7 @@ button:active {
 }
 
 
-/* ================================
-   CREATIVE
-================================ */
+/* CREATIVE */
 
 .creative-template {
     background: linear-gradient(135deg, #fff7fc, #f1f7ff);
@@ -385,9 +396,7 @@ button:active {
 }
 
 
-/* ================================
-   MINIMAL
-================================ */
+/* MINIMAL */
 
 .minimal-template {
     background: white;
@@ -427,9 +436,7 @@ button:active {
 }
 
 
-/* ================================
-   DARK MODE
-================================ */
+/* DARK MODE */
 
 body.dark-mode {
     background: #101318;
@@ -451,6 +458,15 @@ body.dark-mode select {
 
 body.dark-mode .container > h1 {
     color: #4d9cff;
+}
+
+body.dark-mode .intro {
+    color: #bbb;
+}
+
+body.dark-mode .date-info {
+    background: #202b3b;
+    color: #75b1ff;
 }
 
 body.dark-mode .resume-card {
@@ -504,9 +520,7 @@ body.dark-mode .price-card p {
 }
 
 
-/* ================================
-   PRINT / PDF
-================================ */
+/* PRINT / PDF */
 
 @media print {
 
@@ -524,12 +538,15 @@ body.dark-mode .price-card p {
     }
 
     .container > h1,
+    .container > .intro,
+    .container > .date-info,
     .container > input,
     .container > textarea,
     .container > select,
     .container > label,
     .container > button,
-    .premium-box {
+    .premium-box,
+    .preview-title {
         display: none !important;
     }
 
@@ -545,9 +562,7 @@ body.dark-mode .price-card p {
 }
 
 
-/* ================================
-   MOBILE
-================================ */
+/* MOBILE */
 
 @media (max-width: 600px) {
 
