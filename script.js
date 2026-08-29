@@ -269,3 +269,74 @@ document.addEventListener("input", function () {
 document.addEventListener("DOMContentLoaded", function () {
     updateLivePreview();
 });
+// ================================
+// LIVE DATE
+// ================================
+
+function updateLiveDate() {
+    const dateElement = document.getElementById("liveDate");
+
+    if (!dateElement) return;
+
+    const today = new Date();
+
+    dateElement.textContent = today.toLocaleDateString("en-IN", {
+        day: "2-digit",
+        month: "long",
+        year: "numeric"
+    });
+}
+
+
+// ================================
+// PREMIUM PLAN
+// ================================
+
+let selectedPremiumPlan = null;
+
+function selectPlan(plan, price) {
+
+    selectedPremiumPlan = {
+        plan: plan,
+        price: price
+    };
+
+    // Save selected plan
+    localStorage.setItem(
+        "resumeAiPremium",
+        JSON.stringify(selectedPremiumPlan)
+    );
+
+    alert(
+        "💎 ResumeAi Premium\n\n" +
+        "Plan: " + plan + "\n" +
+        "Price: ₹" + price + "\n\n" +
+        "Premium plan selected successfully!"
+    );
+}
+
+
+// ================================
+// LOAD DATE + PREMIUM
+// ================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    updateLiveDate();
+
+    // Check saved premium plan
+    const savedPlan = localStorage.getItem("resumeAiPremium");
+
+    if (savedPlan) {
+        try {
+            selectedPremiumPlan = JSON.parse(savedPlan);
+        } catch (error) {
+            selectedPremiumPlan = null;
+        }
+    }
+
+});
+
+
+// Update date every minute
+setInterval(updateLiveDate, 60000);
