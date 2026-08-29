@@ -340,3 +340,59 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Update date every minute
 setInterval(updateLiveDate, 60000);
+// ==========================================
+// RESUMEAI - LIVE DATE
+// ==========================================
+
+function updateLiveDate() {
+    const liveDate = document.getElementById("liveDate");
+
+    if (!liveDate) return;
+
+    const today = new Date();
+
+    liveDate.textContent = today.toLocaleDateString("en-IN", {
+        weekday: "long",
+        day: "2-digit",
+        month: "long",
+        year: "numeric"
+    });
+}
+
+
+// ==========================================
+// RESUMEAI - PREMIUM
+// ==========================================
+
+function selectPlan(plan, price) {
+
+    localStorage.setItem("resumeAiPremiumPlan", plan);
+    localStorage.setItem("resumeAiPremiumPrice", price);
+
+    alert(
+        "💎 ResumeAi Premium\n\n" +
+        "Plan: " + plan + "\n" +
+        "Price: ₹" + price + "\n\n" +
+        "Premium plan selected successfully!"
+    );
+}
+
+
+// ==========================================
+// START
+// ==========================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    updateLiveDate();
+
+    // Existing live preview
+    if (typeof updateLivePreview === "function") {
+        updateLivePreview();
+    }
+
+});
+
+
+// Automatically update date once per minute
+setInterval(updateLiveDate, 60000);
