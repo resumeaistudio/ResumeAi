@@ -1,253 +1,161 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>ResumeAi</title>  
 
-    <title>ResumeAi - Free AI Resume Builder</title>
+<link rel="stylesheet" href="style.css">
 
-    <meta name="description"
-          content="ResumeAi is a free AI Resume Builder. Create professional resumes with AI summaries, beautiful templates, live preview and PDF download.">
+</head>  <body>  <div class="container">  <h1>ResumeAi</h1>  
 
-    <meta name="keywords"
-          content="AI Resume Builder, Free Resume Builder, Resume Maker, CV Builder, ResumeAi">
+<input type="text" id="name" placeholder="Full Name">  
 
-    <meta name="author" content="ResumeAi">
+<input type="email" id="email" placeholder="Email">  
 
-    <meta name="robots" content="index, follow">
+<input type="text" id="phone" placeholder="Phone Number">  
 
-    <link rel="canonical"
-          href="https://resumeaistudio.github.io/ai-resume-builder/">
+<input type="text" id="jobTitle" placeholder="Job Title">  
 
-    <meta property="og:title"
-          content="ResumeAi - Free AI Resume Builder">
+<input type="file" id="photo" accept="image/*">  
 
-    <meta property="og:description"
-          content="Create professional resumes with ResumeAi.">
+<label><b>Select Resume Template</b></label>  
 
-    <meta property="og:type" content="website">
+<select id="template">  
+    <option value="classic">Classic</option>  
+    <option value="modern">Modern</option>  
+    <option value="professional">Professional</option>  
+    <option value="creative">Creative</option>  
+    <option value="minimal">Minimal</option>  
+</select>  
 
-    <meta property="og:url"
-          content="https://resumeaistudio.github.io/ai-resume-builder/">
+<input type="text" id="education" placeholder="Education">  
 
-    <link rel="stylesheet" href="style.css">
-</head>
+<textarea id="skills"  
+    placeholder="Skills (Example: HTML, CSS, JavaScript)"></textarea>  
 
-<body>
+<textarea id="experience"  
+    placeholder="Experience (Example: Fresher)"></textarea>  
 
-<div class="container">
+<button onclick="generateAI()">  
+    🤖 Generate AI Summary  
+</button>  
 
-    <h1>ResumeAi</h1>
+<textarea id="summary"  
+    placeholder="AI Professional Summary"></textarea>  
 
-    <p class="intro">
-        Create a professional resume quickly with ResumeAi.
-    </p>
+<textarea id="projects"  
+    placeholder="Projects (Example: AI Resume Builder, Weather App)"></textarea>  
 
-    <div class="date-info">
-        📅 Today: <span id="liveDate"></span>
-    </div>
+<input type="text" id="languages"  
+    placeholder="Languages (Example: Hindi, English)">  
 
-    <input
-        type="text"
-        id="name"
-        placeholder="Full Name">
+<input type="url" id="github"  
+    placeholder="GitHub Profile Link">  
 
-    <input
-        type="email"
-        id="email"
-        placeholder="Email">
+<input type="url" id="linkedin"  
+    placeholder="LinkedIn Profile Link">  
 
-    <input
-        type="text"
-        id="phone"
-        placeholder="Phone Number">
+<button onclick="generateResume()">  
+    Generate Resume  
+</button>  
 
-    <input
-        type="text"
-        id="jobTitle"
-        placeholder="Job Title">
 
-    <input
-        type="file"
-        id="photo"
-        accept="image/*">
+<!-- PREMIUM -->  
 
-    <label>
-        <b>Select Resume Template</b>
-    </label>
+<div class="premium-box">  
 
-    <select id="template">
+    <h2>💎 ResumeAi Premium</h2>  
 
-        <option value="classic">
-            Classic
-        </option>
+    <p>  
+        Unlock premium templates and features.  
+    </p>  
 
-        <option value="modern">
-            Modern
-        </option>
+    <div class="premium-features">  
 
-        <option value="professional">
-            Professional
-        </option>
+        <p>🔒 Modern Template</p>  
+        <p>🔒 Professional Template</p>  
+        <p>🔒 Creative Template</p>  
+        <p>🔒 Minimal Template</p>  
+        <p>🔒 Premium Resume Designs</p>  
 
-        <option value="creative">
-            Creative
-        </option>
+    </div>  
 
-        <option value="minimal">
-            Minimal
-        </option>
 
-    </select>
+    <div class="pricing-container">  
 
-    <input
-        type="text"
-        id="education"
-        placeholder="Education">
 
-    <textarea
-        id="skills"
-        placeholder="Skills (Example: HTML, CSS, JavaScript)"></textarea>
+        <!-- WEEKLY -->  
 
-    <textarea
-        id="experience"
-        placeholder="Experience (Example: Fresher)"></textarea>
+        <div class="price-card">  
 
-    <button onclick="generateAI()">
-        🤖 Generate AI Summary
-    </button>
+            <h3>⚡ Weekly</h3>  
 
-    <textarea
-        id="summary"
-        placeholder="AI Professional Summary"></textarea>
+            <h2>₹29</h2>  
 
-    <textarea
-        id="projects"
-        placeholder="Projects (Example: AI Resume Builder, Weather App)"></textarea>
+            <p>per week</p>  
 
-    <input
-        type="text"
-        id="languages"
-        placeholder="Languages (Example: Hindi, English)">
+            <button onclick="selectPlan('Weekly', 29)">  
+                Choose Weekly  
+            </button>  
 
-    <input
-        type="url"
-        id="github"
-        placeholder="GitHub Profile Link">
+        </div>  
 
-    <input
-        type="url"
-        id="linkedin"
-        placeholder="LinkedIn Profile Link">
 
-    <button onclick="generateResume()">
-        Generate Resume
-    </button>
+        <!-- MONTHLY -->  
 
+        <div class="price-card best-plan">  
 
-    <!-- PREMIUM -->
+            <span>BEST VALUE</span>  
 
-    <div class="premium-box">
+            <h3>💎 Monthly</h3>  
 
-        <h2>💎 ResumeAi Premium</h2>
+            <h2>₹79</h2>  
 
-        <p>
-            Unlock premium templates and features.
-        </p>
+            <p>per month</p>  
 
-        <div class="premium-features">
+            <button onclick="selectPlan('Monthly', 79)">  
+                Choose Monthly  
+            </button>  
 
-            <p>🔒 Modern Template</p>
-            <p>🔒 Professional Template</p>
-            <p>🔒 Creative Template</p>
-            <p>🔒 Minimal Template</p>
-            <p>🔒 Premium Resume Designs</p>
+        </div>  
 
-        </div>
 
+        <!-- YEARLY -->  
 
-        <div class="pricing-container">
+        <div class="price-card">  
 
+            <h3>👑 Yearly</h3>  
 
-            <div class="price-card">
+            <h2>₹499</h2>  
 
-                <h3>⚡ Weekly</h3>
+            <p>per year</p>  
 
-                <h2>₹29</h2>
+            <button onclick="selectPlan('Yearly', 499)">  
+                Choose Yearly  
+            </button>  
 
-                <p>per week</p>
+        </div>  
 
-                <button
-                    onclick="selectPlan('Weekly', 29)">
-                    Choose Weekly
-                </button>
+    </div>  
 
-            </div>
+</div>  
 
 
-            <div class="price-card best-plan">
+<button onclick="darkMode()">  
+    🌙 Dark Mode  
+</button>  
 
-                <span>BEST VALUE</span>
+<button onclick="clearForm()">  
+    Clear Form  
+</button>  
 
-                <h3>💎 Monthly</h3>
+<button onclick="downloadPDF()">  
+    Download Resume (PDF)  
+</button>  
 
-                <h2>₹79</h2>
 
-                <p>per month</p>
+<!-- LIVE PREVIEW -->  
 
-                <button
-                    onclick="selectPlan('Monthly', 79)">
-                    Choose Monthly
-                </button>
+<div id="resume"></div>
 
-            </div>
-
-
-            <div class="price-card">
-
-                <h3>👑 Yearly</h3>
-
-                <h2>₹499</h2>
-
-                <p>per year</p>
-
-                <button
-                    onclick="selectPlan('Yearly', 499)">
-                    Choose Yearly
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <button onclick="darkMode()">
-        🌙 Dark Mode
-    </button>
-
-    <button onclick="clearForm()">
-        Clear Form
-    </button>
-
-    <button onclick="downloadPDF()">
-        Download Resume (PDF)
-    </button>
-
-
-    <!-- LIVE PREVIEW -->
-
-    <div class="preview-title">
-        <h2>Live Resume Preview</h2>
-    </div>
-
-    <div id="resume"></div>
-
-</div>
-
-
-<script src="script.js"></script>
-
-</body>
+</div>  <script src="script.js"></script>  </body>  
 </html>
